@@ -12,6 +12,4 @@ export default defineConfig({
     }
   }
 })
-module.exports = {
-  publicPath: '/vue-challenge-mentor/'
-}
+

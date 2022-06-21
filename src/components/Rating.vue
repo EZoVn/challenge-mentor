@@ -109,6 +109,7 @@ $VeryDark: hsl(216, 12%, 8%);
   border-radius: 25px;
   background-color: hsl(213, 19%, 15%);
   color: #8c939d;
+  text-align: center;
 }
 h1 {
   font-weight: 700;

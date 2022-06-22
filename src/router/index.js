@@ -13,6 +13,11 @@ const router = createRouter({
       path: '/rating',
       name: 'Rating',
       component: () => import('../views/Rating.vue')
+    },
+    {
+      path: '/dropdownNav',
+      name: 'DropdownNav',
+      component: () => import('../views/DropdownNav.vue')
     }
   ]
 })

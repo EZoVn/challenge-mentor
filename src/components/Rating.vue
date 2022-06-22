@@ -69,12 +69,16 @@
 
 <script>
 export default {
+  name: 'Rating',
   components: {},
   data: function () {
     return {
       mode: "choose",
       number: 0,
     };
+  },
+  computed:{
+
   },
   methods: {
     submit() {
@@ -87,7 +91,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 // Font family
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
 // Variables

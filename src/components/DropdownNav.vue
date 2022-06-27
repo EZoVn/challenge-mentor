@@ -7,7 +7,8 @@
             <img src="@/assets/images/dropdown/images/logo.svg" alt="logo snap" />
           </li>
           <li class="dropdown" @click="isOpen = !isOpen">
-            Features <img src="@/assets/images/dropdown/images/icon-arrow-down.svg" alt="arrow down" />
+            Features <img v-show="isOpen == false" src="@/assets/images/dropdown/images/icon-arrow-down.svg" alt="arrow down" />
+            <img v-show="isOpen == true" src="@/assets/images/dropdown/images/icon-arrow-up.svg" alt="arrow up" />
             <transition name="fade">
               <ul v-if="isOpen" class="dropdown-content">
                 <li><img src="@/assets/images/dropdown/images/icon-todo.svg" alt="icon todo list" /> Todo List</li>
@@ -18,7 +19,8 @@
             </transition>
           </li>
           <li @click="isOpen2 = !isOpen2">
-            Company <img src="@/assets/images/dropdown/images/icon-arrow-down.svg" alt="arrow down" />
+            Company <img v-show="isOpen2 == false" src="@/assets/images/dropdown/images/icon-arrow-down.svg" alt="arrow down" />
+            <img v-show="isOpen2 == true" src="@/assets/images/dropdown/images/icon-arrow-up.svg" alt="arrow up" />
             <transition name="fade">
               <ul v-if="isOpen2" class="dropdown-content dropdown-content--2">
                 <li>History</li>
@@ -32,7 +34,7 @@
         </ul>
         <ul class="nav__login">
           <li>Login</li>
-          <li>Register</li>
+          <li class="nav__login--register">Register</li>
         </ul>
       </div>
     </nav>
@@ -84,11 +86,12 @@ $AlmostBlack: hsl(0, 0%, 8%);
   margin: 0;
   padding: 0;
   font-family: "Epilogue", sans-serif;
-  color: $AlmostBlack;
   font-size: 18px;
   font-weight: 500;
+  color: $MediumGray;
 }
 h1 {
+  color: $AlmostBlack;
   font-size: 48px;
   font-weight: 700;
 }
@@ -96,6 +99,17 @@ h1 {
   padding: 30px;
   background-color: $AlmostWhite;
   opacity: 0.8;
+}
+.nav__login {
+  align-items: center;
+  &--register {
+    padding: 8px 20px;
+    border: 2px solid $MediumGray;
+    border-radius: 15px;
+    &:hover {
+      color: $AlmostBlack;
+    }
+  }
 }
 .dropdown-content {
   background-color: $AlmostWhite;
@@ -155,11 +169,11 @@ li {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.7s ease-out;
+  transition: all 0.5s ease-out;
 }
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
-  transform: translateY(-40px);
+  transform: translateY(-40px) scaleY(.5);
 }
 </style>
